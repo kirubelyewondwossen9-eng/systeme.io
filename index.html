@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SacleMyBusiness</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Saclemybusiness</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Contact Us</a>
+
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>
+      Transform Your Business with Our<br />
+      AI-Powered Solutions
+    </h1>
+    <p>
+      Utilize our tools to streamline your sales process and
+      convert visitors into loyal customers.
+    </p>
+
+  <form class="hero-form" onsubmit="goToProducts(event)">
+  <button type="submit">See Recommended tools</button>
+</form>
+
+<script>
+function goToProducts(e) {
+  e.preventDefault();
+  window.location.href = "product.html";
+}
+</script>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
