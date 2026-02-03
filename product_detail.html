@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<body>
+
+  <section class="product-detail-hero">
+    <div class="logo-header">Saclemybusiness</div>
+
+    <!-- HERO TITLE -->
+    <h1 id="hero-title" class="hero-title"></h1>
+    <p id="product-short-desc" class="hero-subtitle"></p>
+  </section>
+
+  <section class="product-detail-content">
+    <div class="product-detail-left">
+      <a href="https://systeme.io/tr/2/161/12467561730/39837047/39953962471dfd13cc34852c7741217295c92b975" target="_blank">
+  <img id="product-img" src="" 
+       alt="Product Image" 
+       style="width: 280px; height: auto;">
+</a>
+
+    </div>
+
+    <div class="product-detail-right">
+      <!-- DETAIL TITLE -->
+      <h2 id="detail-title" class="detail-title"></h2>
+
+      <!-- DESCRIPTION TITLE -->
+      <h1 class="product-desc-title" style="font-size: 50px; color: #3593e5; font-weight: 800;">
+  Run Your Business Like a Pro, Even If You’re Just Starting.
+</h1>
+
+      <p id="product-desc" class="detail-text"></p>
+
+      <a href="https://systeme.io/tr/2/161/12467561730/39837047/39953962471dfd13cc34852c7741217295c92b975" target="_blank" id="cta-btn" class="btn">Start free - Check out the offers</a>
+
+      <br><br>
+      <div style="position: relative; height: 300px;"> <!-- adjust height as needed -->
+  <a href="product.html" 
+     style="position: absolute; bottom: 0; right: 0; color: #070809; text-decoration: none; font-weight: 500;">
+    ← Back to Products
+  </a>
+</div>
+
+    </div>
+  </section>
+
+
+  <script>
+  const products = {
+    "1": {
+      img: "product1.1..png",
+      desc: "Join thousands of small business owners using one proven platform to sell, market, and grow without tech stress or hidden costs. Create funnels, websites, email marketing, and online sales—all from one simple dashboard."
+    },
+    "2": {
+      title: "Product 2",
+      shortDesc: "Sales funnel builder for online businesses",
+      img: "images/product2.jpg",
+      desc: "Product 2 is a comprehensive sales funnel builder designed to help online businesses convert visitors into customers."
+    },
+    "3": {
+      title: "Product 3",
+      shortDesc: "Email marketing & lead generation system",
+      img: "images/product3.jpg",
+      desc: "Product 3 is a powerful email marketing and lead generation system."
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  if (products[id]) {
+    document.getElementById("hero-title").textContent = products[id].title;
+    document.getElementById("detail-title").textContent = products[id].title;
+    document.getElementById("product-short-desc").textContent = products[id].shortDesc;
+    document.getElementById("product-img").src = products[id].img;
+    document.getElementById("product-img").style.width = "280px";
+    document.getElementById("product-img").style.height = "auto";
+    document.getElementById("product-desc").textContent = products[id].desc;
+   
+  } else {
+    document.getElementById("hero-title").textContent = "Product Not Found";
+    document.getElementById("product-desc").textContent = "Sorry, this product does not exist.";
+  }
+</script>
+
+
+</body>
+</html>

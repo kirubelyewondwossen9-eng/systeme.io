@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a href="product.html" class="back-btn">← Back to Products</a>
+  </header>
+
+  <section class="product-detail">
+    <h2 id="product-title"></h2>
+    <img id="product-img" src="" alt="Product Image">
+    <p id="product-desc"></p>
+  </section>
+
+  <script>
+    const products = {
+      "1": {
+        title: "Product 1",
+        img: "images/product1.jpg",
+        desc: "Product 1 is an AI-powered marketing automation tool that helps businesses automate campaigns, track leads, and optimize conversions. With real-time analytics, intuitive dashboards, and seamless integrations, it simplifies marketing while boosting ROI."
+      },
+      "2": {
+        title: "Product 2",
+        img: "images/product2.jpg",
+        desc: "Product 2 is a sales funnel builder for online businesses. It allows you to create, customize, and optimize your funnels, track leads, and increase conversions with built-in analytics and marketing automation."
+      },
+      "3": {
+        title: "Product 3",
+        img: "images/product3.jpg",
+        desc: "Product 3 is an email marketing and lead generation system that enables businesses to build campaigns, capture leads, segment audiences, and automate follow-ups for better engagement and ROI."
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    if(products[id]){
+      document.getElementById("product-title").textContent = products[id].title;
+      document.getElementById("product-img").src = products[id].img;
+      document.getElementById("product-desc").textContent = products[id].desc;
+    } else {
+      document.getElementById("product-title").textContent = "Product Not Found";
+      document.getElementById("product-desc").textContent = "Sorry, we could not find the product you are looking for.";
+      document.getElementById("product-img").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
